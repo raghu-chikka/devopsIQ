@@ -27,7 +27,7 @@ pipeline {
 	}
 	stage('Docker Push'){
 		steps {
-		    sh "sudo docker login --username raghudocker1206 --password ${dockerpass}"
+		    sh "sudo docker login --username raghudocker1206 --password ${raghudocker}"
                     sh "sudo docker push raghudocker1206/devopsdemo1:latest"
 	        }
 	}
