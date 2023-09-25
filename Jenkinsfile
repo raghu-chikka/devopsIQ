@@ -7,12 +7,12 @@ pipeline {
     parameters {
     	string(name: 'serverIP', defaultValue: 'None', description: 'Enter Server IP ')
 	string(name: 'servername', defaultValue: 'None', description: 'Enter Ansible slave name ')
-	password(name: 'dockerpass', description: 'Enter docker login password ')	    
+	password(name: 'raghudocker', description: 'Enter docker login password ')	    
     }
     stages {
         stage('SCM checkout'){
             steps {
-		git "https://github.com/vistasunil/devopsIQ.git"
+		git "https://github.com/raghu-chikka/devopsIQ.git"
             }
 	}
 	stage('Remove dockers'){
@@ -22,13 +22,13 @@ pipeline {
 	}
 	stage('Build'){
 	    steps {
-		    sh "sudo docker build /home/ubuntu/jenkins/workspace/${JOB_NAME} -t vistasunil/devopsdemo"
+		    sh "sudo docker build /home/ubuntu/jenkins/workspace/${JOB_NAME} -t raghudocker1206/devopsdemo"
 	   }
 	}
 	stage('Docker Push'){
 		steps {
 		    sh "sudo docker login --username vistasunil --password ${dockerpass}"
-                    sh "sudo docker push vistasunil/devopsdemo:latest"
+                    sh "sudo docker push raghudocker1206/devopsdemo:latest"
 	        }
 	}
 	stage('Configure servers with Docker and deploy website') {
