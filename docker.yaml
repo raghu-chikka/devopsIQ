@@ -4,7 +4,7 @@
   vars:
     - create_containers: 5
     - default_container_name: my_website
-    - default_container_image: raghudocker1206/devopsdemo:latest
+    - default_container_image: raghudocker1206/devopsdemo1:latest
     - container_port: "8"
   tasks:
     - name: Install aptitude using apt
