@@ -20,5 +20,5 @@
     - name: unzip chromedriver
       shell: unzip chromedriver-linux64.zip
     - name: change chrome location
-      shell: sudo mv chromedriver-linux64.zip/chromedriver /user/local/bin/chromedriver
+      shell: sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
 
